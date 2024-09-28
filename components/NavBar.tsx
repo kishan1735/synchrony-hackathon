@@ -37,12 +37,12 @@ function NavBar() {
           >
             Dashboard
           </Link>
-          {/* <Link
-            href="#"
+          <Link
+            href="/visualise"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Orders
-          </Link> */}
+            Visualise
+          </Link>
           {/* <Link
             href="/auction"
             className="text-muted-foreground transition-colors hover:text-foreground"

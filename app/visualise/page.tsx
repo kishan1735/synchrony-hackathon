@@ -1,8 +1,8 @@
 "use client";
 
 import AuthCheck from "@/components/AuthCheck";
+import DSTransactionGraph from "@/components/DSTransactionGraph";
 import NavBar from "@/components/NavBar";
-import TransactionGraph from "@/components/TransactionGraph";
 import { Block } from "@/lib/chain";
 
 export default function Visualise() {
@@ -17,7 +17,9 @@ export default function Visualise() {
     <AuthCheck>
       <div className="flex flex-col min-h-screen text-slate-200 gap-12 items-center">
         <NavBar />
-        <TransactionGraph chain={chain} />
+        <div className="flex items-center justify-center">
+          <DSTransactionGraph chain={chain} />
+        </div>
       </div>
     </AuthCheck>
   );

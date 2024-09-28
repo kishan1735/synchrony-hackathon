@@ -22,6 +22,7 @@ async function handler(req: ExtendedNextApiRequest) {
   const user = await prismadb.user.findUniqueOrThrow({
     where: { email: session.user.email ?? "" },
   });
+  console.log(user);
   return NextResponse.json(user);
 }
 
