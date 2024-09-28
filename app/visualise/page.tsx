@@ -1,6 +1,7 @@
 "use client";
 
 import AuthCheck from "@/components/AuthCheck";
+import BlockchainVisualizer from "@/components/BlockchainVisualizer";
 import DSTransactionGraph from "@/components/DSTransactionGraph";
 import NavBar from "@/components/NavBar";
 import { Block } from "@/lib/chain";
@@ -34,8 +35,9 @@ export default function Visualise() {
     <AuthCheck>
       <div className="flex flex-col min-h-screen text-slate-200 gap-12 items-center">
         <NavBar />
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <DSTransactionGraph chain={chain} />
+          <BlockchainVisualizer />
         </div>
       </div>
     </AuthCheck>
