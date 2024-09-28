@@ -32,23 +32,23 @@ function NavBar() {
             <span className="sr-only">Bits Bids</span>
           </Link>
           <Link
-            href="#"
+            href="/dashboard"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Dashboard
           </Link>
-          <Link
+          {/* <Link
             href="#"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Orders
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             href="/auction"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Auctions
-          </Link>
+          </Link> */}
         </nav>
         <Sheet>
           <SheetTrigger asChild>
