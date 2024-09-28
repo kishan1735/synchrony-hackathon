@@ -22,7 +22,7 @@ export default function Dashboard() {
         >
           <p className="mx-auto">Send Money</p>
         </Link>
-        <Card className="w-full max-w-sm bg-slate-100 mt-16">
+        <Card className="w-full max-w-sm bg-slate-100 mt-4">
           <CardHeader>
             <CardTitle className="text-2xl">Your Account</CardTitle>
             <CardDescription>View your current account details</CardDescription>
