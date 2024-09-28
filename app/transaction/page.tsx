@@ -21,10 +21,28 @@ interface TransactionType {
   amount: string;
 }
 
-export default function Dashboard() {
+export default function Transaction() {
   const { register, handleSubmit } = useForm<TransactionType>();
 
-  const onSubmit: SubmitHandler<TransactionType> = async (data) => {};
+  async function sendMoney({ receiver, amount }) {
+    const data = await fetch("/api/user/send", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ receiver, amount }),
+    });
+    const res = await data.json();
+    console.log(res);
+  }
+
+  const onSubmit: SubmitHandler<TransactionType> = async (data) => {
+    await sendMoney({
+      receiver: data.accountNumber,
+      amount: data.amount,
+    });
+  };
   return (
     <AuthCheck>
       <div className="flex flex-col min-h-screen text-slate-200 gap-12 items-center">
@@ -40,7 +58,7 @@ export default function Dashboard() {
                 <Label htmlFor="email">Account Number</Label>
                 <Input
                   id="email"
-                  type="email"
+                  type="text"
                   autoComplete="off"
                   required
                   {...register("accountNumber")}
@@ -50,7 +68,7 @@ export default function Dashboard() {
                 <Label htmlFor="password">Amount</Label>
                 <Input
                   id="password"
-                  type="password"
+                  type="number"
                   autoComplete="off"
                   required
                   {...register("amount")}
