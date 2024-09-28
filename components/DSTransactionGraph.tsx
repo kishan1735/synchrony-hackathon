@@ -21,12 +21,14 @@ const DSTransactionGraph: React.FC<Props> = ({ chain }) => {
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     const nodes = Array.from(
-      new Set(chain.flatMap(({ sender, receiver }) => [sender, receiver]))
+      new Set(
+        chain.flatMap(({ senderId, receiverId }) => [senderId, receiverId])
+      )
     ).map((id) => ({ id }));
 
-    const links = chain.map(({ sender, receiver, amount }) => ({
-      source: sender,
-      target: receiver,
+    const links = chain.map(({ senderId, receiverId, amount }) => ({
+      source: senderId,
+      target: receiverId,
       amount,
     }));
 
