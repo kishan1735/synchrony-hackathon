@@ -18,6 +18,7 @@ model User {
   sessions       Session[]
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
+  balance        Float     @default(100.0)
 }
 
 model Account {
@@ -58,4 +59,3 @@ model VerificationToken {
 
   @@id([identifier, token])
 }
-
