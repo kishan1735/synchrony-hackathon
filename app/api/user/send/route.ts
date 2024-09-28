@@ -13,7 +13,7 @@ interface ExtendedNextApiRequest extends NextApiRequest {
   };
 }
 
-export default async function handler(req: Request) {
+async function handler(req: Request) {
   const session = await getServerSession(authOptions);
 
   if (!session || !session.user) {
@@ -27,11 +27,12 @@ export default async function handler(req: Request) {
     where: { email: session.user.email ?? "" },
   });
 
-  chain.push({
-    sender: user.id,
-    receiver,
-    amount: parseInt(amount),
-    timestamp: Date.now(),
+  await prismadb.block.create({
+    data: {
+      senderId: user.id,
+      receiverId: receiver,
+      amount: parseFloat(amount),
+    },
   });
 
   const receiverUser = await prismadb.user.findFirstOrThrow({

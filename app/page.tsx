@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <AuthCheck>
+    // <AuthCheck>
       <div className="flex flex-col min-h-screen text-slate-200 gap-12 items-center">
         <NavBar />
         <div className="text-6xl md:text-8xl text-slate-200 mt-28">Midas</div>
@@ -17,6 +17,6 @@ export default function Home() {
           <ArrowRight />
         </Link>
       </div>
-    </AuthCheck>
+    // </AuthCheck>
   );
 }

@@ -59,3 +59,11 @@ model VerificationToken {
 
   @@id([identifier, token])
 }
+
+model Block {
+  id           String   @id @default(cuid())
+  receiverId   String
+  senderId     String
+  amount       Float
+  createdAt    DateTime @default(now())
+}
