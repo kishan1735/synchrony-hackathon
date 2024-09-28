@@ -11,6 +11,7 @@ export default function Visualise() {
     { sender: "Bob", receiver: "Charlie", amount: 30, timestamp: Date.now() },
     { sender: "Charlie", receiver: "Dave", amount: 20, timestamp: Date.now() },
     { sender: "Dave", receiver: "Alice", amount: 25, timestamp: Date.now() },
+    { sender: "Dave", receiver: "Alice", amount: 25, timestamp: Date.now() },
   ];
   return (
     <AuthCheck>

@@ -47,6 +47,8 @@ const TransactionGraph: React.FC<Props> = ({ chain }) => {
       .attr("stroke-width", (d) => Math.sqrt(d.amount))
       .style("stroke", "#999");
 
+    link.append("title").text((d) => `${d.amount}`);
+
     const node = svg
       .append("g")
       .selectAll("circle")
